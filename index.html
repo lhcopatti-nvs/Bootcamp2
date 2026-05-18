@@ -3,231 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Luis Henrique Roosevelt Copatti</title>
+    <title>Luis Henrique Roosevelt Copatti | Portfólio</title>
     <style>
         :root {
-            --primary-color: #0a66c2;
-            --bg-color: #f3f2ef;
-            --text-color: #333;
-            --card-bg: #fff;
-            --border-radius: 12px;
+            --bg-main: #0f172a;
+            --bg-surface: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #6366f1;
+            --accent-gradient: linear-gradient(135deg, #6366f1, #38bdf8);
+            --border: #334155;
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
         }
 
-        .container {
-            max-width: 780px;
+        .portfolio-container {
+            max-width: 800px;
             width: 100%;
         }
 
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            border: 1px solid #e0e0e0;
-            margin-bottom: 16px;
-            overflow: hidden;
+        /* Hero Section */
+        header {
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
         }
 
-        /* Seção do Cabeçalho */
-        .banner {
-            height: 160px;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            position: relative;
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 24px;
         }
 
-        .profile-wrapper {
-            padding: 0 24px 24px 24px;
-            position: relative;
-        }
-
-        .profile-img {
-            width: 152px;
-            height: 152px;
+        .badge-status::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #34d399;
             border-radius: 50%;
-            border: 4px solid var(--card-bg);
-            position: absolute;
-            top: -110px;
-            left: 24px;
-            object-fit: cover;
-            /* Garante que a foto preencha o círculo */
-            background-color: white; 
-        }
-
-        .info {
-            margin-top: 55px;
+            display: inline-block;
+            box-shadow: 0 0 8px #34d399;
         }
 
         h1 {
-            margin: 0 0 4px 0;
-            font-size: 24px;
-            font-weight: 600;
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 16px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .headline {
-            margin: 0 0 10px 0;
-            font-size: 16px;
-            font-weight: 400;
-            color: #191919;
-            line-height: 1.4;
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin-bottom: 16px;
         }
 
         .location {
             font-size: 14px;
-            color: #666;
-            margin-bottom: 16px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .status-badge {
-            display: inline-block;
-            background-color: #d8e6f1;
-            color: #004b7c;
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .status-badge span {
-            display: block;
-            font-weight: 400;
-            color: #333;
-            margin-top: 4px;
-        }
-
-        /* Seções Genéricas */
-        .section-header {
-            padding: 24px 24px 0 24px;
+        /* Seções Gerais */
+        section {
+            margin-bottom: 48px;
         }
 
         h2 {
             font-size: 20px;
-            margin: 0;
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .content {
-            padding: 16px 24px 24px 24px;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #4a4a4a;
+        h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background-color: var(--border);
         }
 
-        .content p {
-            margin-top: 0;
-            margin-bottom: 16px;
+        .about-text p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 20px;
         }
 
-        .content p:last-child {
+        .about-text p:last-child {
             margin-bottom: 0;
         }
 
-        /* Seção Educação */
-        .education-item {
+        /* Grid de Educação / Informações */
+        .edu-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .edu-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .edu-header {
             display: flex;
+            justify-content: space-between;
             align-items: flex-start;
+            margin-bottom: 12px;
         }
 
-        .edu-logo {
-            width: 56px;
-            height: 56px;
-            background-color: #5c1b48;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 12px;
-            margin-right: 16px;
-        }
-
-        .edu-details h3 {
-            margin: 0 0 4px 0;
-            font-size: 16px;
+        .institution {
+            font-size: 18px;
             font-weight: 600;
-            color: var(--text-color);
+            color: var(--text-primary);
         }
 
-        .edu-details p {
-            margin: 0 0 2px 0;
-            font-size: 14px;
+        .period {
+            font-size: 13px;
+            background-color: var(--bg-main);
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-variant-numeric: tabular-nums;
         }
 
-        .edu-details .date {
-            color: #666;
+        .course {
+            font-size: 15px;
+            color: #a5b4fc;
+            font-weight: 500;
         }
 
         @media (max-width: 600px) {
-            .profile-img {
-                width: 120px;
-                height: 120px;
-                top: -80px;
+            h1 {
+                font-size: 32px;
             }
-            .info {
-                margin-top: 50px;
+            .edu-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .period {
+                align-self: flex-start;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        
-        <div class="card">
-            <div class="banner"></div>
-            <div class="profile-wrapper">
-                <img src="https://i.imgur.com/sITJ1ax.png" alt="Luis Henrique Roosevelt Copatti" class="profile-img">
-                
-                <div class="info">
-                    <h1>Luis Henrique Roosevelt Copatti</h1>
-                    <div class="headline">Technology Student | Análise e Desenvolvimento de Sistemas | Interesse em Inovação e Soluções Digitais</div>
-                    <div class="location">Brasília, Distrito Federal, Brasil</div>
-                    
-                    <div class="status-badge">
-                        Buscando emprego
-                        <span>Brasília, DF | Presencial · Híbrido</span>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="section-header">
-                <h2>Sobre</h2>
+    <div class="portfolio-container">
+        
+        <header>
+            <div class="badge-status">Disponível para oportunidades (Presencial · Híbrido)</div>
+            <h1>Luis Henrique Roosevelt Copatti</h1>
+            <p class="headline">Estudante de Tecnologia | Análise e Desenvolvimento de Sistemas | Interesse em Inovação e Soluções Digitais</p>
+            <div class="location">
+                <span>📍 Brasília, Distrito Federal, Brasil</span>
             </div>
-            <div class="content">
+        </header>
+
+        <section>
+            <h2>Sobre</h2>
+            <div class="about-text">
                 <p>Estudante de Análise e Desenvolvimento de Sistemas, iniciando minha formação na área de tecnologia com interesse em compreender como sistemas, dados e soluções digitais impactam negócios e pessoas.</p>
                 <p>Atualmente desenvolvendo conhecimentos em lógica de programação e fundamentos de banco de dados, buscando aplicar a teoria em atividades práticas e projetos acadêmicos.</p>
                 <p>Com inglês avançado, facilidade de comunicação e trabalho em equipe, procuro oportunidade de estágio na área de tecnologia onde eu possa aprender, contribuir e evoluir profissionalmente.</p>
             </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <div class="section-header">
-                <h2>Destaques de Formação</h2>
-            </div>
-            <div class="content">
-                <div class="education-item">
-                    <div class="edu-logo">CEUB</div>
-                    <div class="edu-details">
-                        <h3>UniCEUB - Centro Universitário de Brasília</h3>
-                        <p>Análise e Desenvolvimento de Sistemas</p>
-                        <p class="date">fevereiro de 2026 - junho de 2029</p>
-                    </div>
+        <section>
+            <h2>Formação Acadêmica</h2>
+            <div class="edu-card">
+                <div class="edu-header">
+                    <span class="institution">UniCEUB — Centro Universitário de Brasília</span>
+                    <span class="period">02/2026 — 06/2029</span>
                 </div>
+                <div class="course">Graduação em Análise e Desenvolvimento de Sistemas</div>
             </div>
-        </div>
+        </section>
 
     </div>
-</body>
-</html>
